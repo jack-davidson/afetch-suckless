@@ -1,13 +1,13 @@
-SRC = src/fetch.c
+SRC = fetch.c
 CC ?= cc
-CFLAGS = -O2 -std=c99 -Wall -Wextra
+CFLAGS = -O2 -std=c89 -Wall -Wextra
 LDFLAGS = -lpthread
-DEBUGFLAGS = -g -Og -std=c99 -Wall -Wextra
+DEBUGFLAGS = -g -Og -std=c89 -Wall -Wextra
 PREFIX ?= /usr/local
 
-all: afetch
+all: clean afetch
 
-afetch: ${SRC} src/config.h src/colour.h
+afetch: ${SRC} config.h colour.h
 	${CC} ${CFLAGS} ${SRC} ${LDFLAGS} -o afetch
 
 debug:

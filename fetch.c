@@ -1,7 +1,6 @@
 #define _POSIX_C_SOURCE 200809L
 
 #include <pthread.h>
-#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -139,10 +138,12 @@ void *os()
 		free(osContents);
 		if (strncmp(newContents, "=", 1) == 0) {
 			int len = strlen(newContents);
-			for (int i = 0; i < len; i++) {
+			int i;
+			for (i = 0; i < len; i++) {
 				if (newContents[i] == '\"' ||
 				    newContents[i] == '=') {
-					for (int ii = 0; ii < len; ii++)
+					int ii;
+					for (ii = 0; ii < len; ii++)
 						newContents[ii] =
 						    newContents[ii + 1];
 					newContents[strlen(newContents) - 1] =
@@ -485,15 +486,16 @@ void *os()
 
 void *colourDraw()
 {
-	if (PrintColours == false)
+	if (!PrintColours)
 		return NULL;
 
 	printf("    ");
-	for (int i = 30; i < 38; i++) {
+	int i;
+	for (i = 30; i < 38; i++) {
 		printf("\033[0;%dm %s", i, ColourCharacter);
-	} // print regular term colours
+	} /* print regular term colours */
 	printf("\n    ");
-	for (int i = 30; i < 38; i++) {
+	for (i = 30; i < 38; i++) {
 		printf("\033[1;%dm %s", i, ColourCharacter);
 	}
 
