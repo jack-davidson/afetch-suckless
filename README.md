@@ -9,7 +9,7 @@ Simple, clean, system info written with suckless principles.
 * configured through source
 
 ## credit
-This project is a derivative work of [afetch](https://github.com/jack-davidson/afetch-suckless). I created this project because
+This project is a derivative work of [afetch](https://github.com/13-CF/afetch) I created this project because
 I wanted to modify the code style (no stdbool, no c++ comments) and wanted
 to port to c89. The modifications done on afetch are minimal and could be
 merged as a patch. The maintainers of afetch have decided their own code
