@@ -489,12 +489,12 @@ void *colourDraw()
 	if (!PrintColours)
 		return NULL;
 
-	printf("    ");
+	printf("  ");
 	int i;
 	for (i = 30; i < 38; i++) {
 		printf("\033[0;%dm %s", i, ColourCharacter);
 	} /* print regular term colours */
-	printf("\n    ");
+	printf("\n  ");
 	for (i = 30; i < 38; i++) {
 		printf("\033[1;%dm %s", i, ColourCharacter);
 	}
